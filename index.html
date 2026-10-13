@@ -11,6 +11,7 @@
 <body>
     <section class="contact">
         <div class="form_container">
+            <h1 class="form_title">Sign Up</h1>
             <div class="input_group">
                 <input id="username" class="input_box" type="text" name="username" placeholder="enter your name">
                 <span id="nameError" class="error"></span>
@@ -21,15 +22,54 @@
 
             </div>
             <div class="input_group">
-                <input id="password" class="input_box" type="password" name="password" placeholder="enter your password">
+                <input id="password" class="input_box" type="password" name="password"
+                    placeholder="enter your password">
                 <span id="passwordError" class="error"></span>
             </div>
             <div class="input_group">
-                <input id="confirmpassword" class="input_box" type="password" name="confirmpassword" placeholder="confirm your password">
+                <input id="confirmpassword" class="input_box" type="password" name="confirmpassword"
+                    placeholder="confirm your password">
                 <span id="confirmPasswordError" class="error"></span>
             </div>
+
+            <div class="input_group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label class="gender" for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label class="gender" for="female">Female</label>
+            </div>
+
+            <div class="input_group">
+                <select name="country" id="country">
+                    <option value="">Select your country</option>
+                    <option value="">Bangladesh</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                </select>
+            </div>
+
+            <div class="input_group">
+                <label for="file">Upload your profile picture:</label><br>
+                <input type="file" name="file" id="file">
+            </div>
+
+            <div class="input_group">
+                Tell us more:<br>
+                <textarea class="mess" name="What do you want to tell us" id="message" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="input_group">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+
             <div class="input_group">
                 <button class="btn">Submit</button>
+            </div>
+
+            <div class="input_group">
+                <h3 class="acc_login">Already have an account? <a href="#">Login</a></h3>
             </div>
         </div>
 

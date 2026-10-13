@@ -10,6 +10,8 @@ const passwordError = document.querySelector("#passwordError");
 const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
 
 
 
@@ -34,7 +36,7 @@ btn.addEventListener("click", () => {
     if (!email.value) {
         emailError.innerHTML = "Email is required";
         email.style.border = "1px solid red";   
-    }else if(emailregex.test(email.value)){
+    }else if(!emailRegex.test(email.value)){
         emailError.innerHTML = "Please enter a valid email";
         email.style.border = "1px solid red";
     }else{
@@ -49,6 +51,12 @@ btn.addEventListener("click", () => {
         password.style.border = "1px solid red";
     }else if(password.value.length < 6){
         passwordError.innerHTML = "Password must be at least 6 characters";
+        password.style.border = "1px solid red";
+    }else if(password.value.length > 20){
+        passwordError.innerHTML = "Password must be less than 10 characters";
+        password.style.border = "1px solid red";
+    }else if(!strongPasswordRegex.test(password.value)){
+        passwordError.innerHTML = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
         password.style.border = "1px solid red";
     }else{
         passwordError.innerHTML = "";
